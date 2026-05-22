@@ -7,6 +7,8 @@ CLI 프로그램 제작 (전주에 제작한 동기 프로그램을 비동기 �
 실습코드리뷰 :  [https://www.notion.so/2-3667b931b9fe80d0a0c6d9aaf4cf0b26?source=copy_link](https://www.notion.so/2-3667b931b9fe80d0a0c6d9aaf4cf0b26?pvs=21)
 
 ---
+<img width="1726" height="1000" alt="image" src="https://github.com/user-attachments/assets/e2453fb0-fee5-4ea0-9fb9-2291ea2fd301" />
+
 
 ## 1-1 날씨 변화 스레드 구현하기
 
