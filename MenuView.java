@@ -11,10 +11,10 @@ public class MenuView {
 
         while (true) {
             int choice = safeInt();
-            if (choice == 1 || choice == 2 || choice == 3) {
+            if (choice >= 1 && choice <= Top.values().length) {
                 return choice;
             }
-            System.out.println("잘못 선택하셨습니다. 1,2,3번 중 다시 입력해주세요 : ");
+            System.out.println("잘못 선택하셨습니다. 1~" +  Top.values().length + "번 중 다시 입력해주세요 : ");
         }
     }
 
@@ -24,10 +24,10 @@ public class MenuView {
 
         while (true) {
             int choice = safeInt();
-            if (choice == 1 || choice == 2) {
+            if (choice >= 1 && choice <= Bottom.values().length) {
                 return choice;
             }
-            System.out.println("잘못 선택하셨습니다. 1,2번 중 다시 입력해주세요 : ");
+            System.out.println("잘못 선택하셨습니다. 1~" +  Bottom.values().length + "번 중 다시 입력해주세요 : ");
         }
     }
 
@@ -37,10 +37,11 @@ public class MenuView {
 
         while (true) {
             int choice = safeInt();
-            if (choice == 1 || choice == 2) {
+            if (choice >= 1 && choice <= Acc.values().length) {
                 return choice;
             }
-            System.out.println("잘못 선택하셨습니다. 1,2번 중 다시 입력해주세요 : ");
+            System.out.println("잘못 선택하셨습니다. 1~" + Acc.values().length + "번 중 다시 입력해주세요 : ");
+
         }
     }
 
@@ -56,7 +57,11 @@ public class MenuView {
                 System.out.println("숫자만 입력할 수 있습니다. 다시 입력해주세요 : ");
                 continue;
             }
-            return Integer.parseInt(answer);
+            try {
+                return Integer.parseInt(answer);
+            } catch (NumberFormatException e) {
+                System.out.println("숫자가 너무 큽니다. 다시 입력해주세요 : ");
+            }
         }
     }
 }
