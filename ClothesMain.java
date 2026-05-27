@@ -6,6 +6,7 @@ public class ClothesMain {
         WeatherThread weatherThread = new WeatherThread();
         weatherThread.start();
 
+        System.out.println("현재 날씨는 " + weatherThread.getCurrentWeather().getWeatherName() + "입니다.\n");
         System.out.println("외출 준비를 시작합니다. 옷을 골라주세요!");
 
         MenuView menu = new MenuView();
@@ -15,6 +16,12 @@ public class ClothesMain {
         int accChoice= menu.getAcc();
 
         weatherThread.stopWeather();
+
+        try {
+            weatherThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         Clothes top = ClothesFactory.createTop(topChoice);
         Clothes bottom = ClothesFactory.createBottom(bottomChoice);
